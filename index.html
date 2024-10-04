@@ -8,10 +8,16 @@
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header>
+    <style>
+        .b{
+            border: 2px solid black;
+        }
+    </style>
+    
+    <header class="bg-neutral">
 <!-- NAVBAR -->
  <nav>
-    <div class="navbar bg-base-100 bg-neutral text-white space-x-2">
+    <div class="navbar bg-base-100 bg-neutral text-white space-x-2 ">
         <div class="flex-1">
           <a class="btn btn-ghost text-xl">Phone-lookup</a>
         </div>
@@ -45,23 +51,28 @@
 
     </header>
 
+<!-- Searchbar -->
 
-    <section class="container bg-red-300 mx-auto">
+    <section class="container  mx-auto py-4">
 
-        <fieldset class="form-control w-80  mx-auto">
-       
-            <div class="join ">
-              <input
-                type="text"
-                placeholder="Search"
-                class="input input-bordered join-item focus:outline-none w-80" />
-              <button class="btn btn-primary join-item">Search</button>
+        <fieldset class="form-control flex justify-center items-center ">
+           
+            <div class="join flex w-full max-w-lg justify-center ">
+                <input
+                    type="text"
+                    placeholder="Search"
+                    class="input input-bordered join-item focus:outline-none w-full md:w-3/4 lg:w-full" />
+                <button class="btn btn-primary join-item" onclick="handleSearch()">Search</button>
             </div>
-          </fieldset>
+        <div class="py-4">
+            <span class="loading loading-spinner loading-lg hidden w-14" id="spinner"></span>
+        </div>    
+        </fieldset>
     </section>
+  
 
 
 
-    
+    <script src="script.js"></script>
 </body>
 </html>
